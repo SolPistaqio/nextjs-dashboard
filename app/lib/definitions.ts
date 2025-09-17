@@ -93,3 +93,10 @@ export type CardData = {
   numberOfInvoices: number;
   numberOfCustomers: number;
 };
+
+export type SessionPayload = {
+  userId?: string;
+  name?: string;
+  email?: string;
+  expiresAt?: Date;
+};
