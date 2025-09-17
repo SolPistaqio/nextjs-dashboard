@@ -19,7 +19,7 @@ export async function middleware(request: NextRequest) {
   const session = await decrypt(cookie);
 
   // 4. Redirect to /login if the user is not authenticated
-  if (isProtectedRoute && !session?.userId) {
+  if (!isPublicRoute && !session?.userId) {
     return NextResponse.redirect(new URL("/login", request.nextUrl));
   }
 
